@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #D2B48C;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerStart">
+   <children>
+      <Button fx:id="buttonAddID" layoutX="25.0" layoutY="355.0" mnemonicParsing="false" onAction="#buttonAdd" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #D2B48C; -fx-border-color: #BC8F8F;" text="Add" textFill="#ba8f8f">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonEditID" layoutX="225.0" layoutY="355.0" mnemonicParsing="false" onAction="#buttonEdit" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #D2B48C; -fx-border-color: #BC8F8F;" text="Edit" textFill="#ba8f8f">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonDeleteID" layoutX="425.0" layoutY="355.0" mnemonicParsing="false" onAction="#buttonDelete" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #D2B48C; -fx-border-color: #BC8F8F;" text="Delete" textFill="#ba8f8f">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <TreeTableView fx:id="tableView" layoutY="6.0" prefHeight="340.0" prefWidth="600.0">
+        <columns>
+          <TreeTableColumn fx:id="columnName" prefWidth="200.0" style="-fx-background-color: #FFF8DC;" text="Name" />
+          <TreeTableColumn fx:id="columnAge" prefWidth="200.0" style="-fx-background-color: #FFEBCD;" text="Age" />
+            <TreeTableColumn fx:id="columnBirthday" prefWidth="200.0" style="-fx-background-color: #FFE4C4;" text="Birthday" />
+        </columns>
+      </TreeTableView>
+   </children>
+</AnchorPane>
