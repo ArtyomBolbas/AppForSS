@@ -3,10 +3,8 @@ package controller;
 import java.net.URL;
 import java.util.Date;
 import java.util.ResourceBundle;
-
+import org.apache.log4j.Logger;
 import application.Main;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -18,11 +16,10 @@ import view.View;
 
 public class ControllerStart {
 	
-	private static ObservableList<Human> humansList = FXCollections.observableArrayList();
+	private static final Logger LOG = Logger.getLogger(ControllerStart.class);
 
 	private Stage primaryStage = new Stage();
 	private static View view;
-	
 	
     @FXML
     private ResourceBundle resources;
@@ -46,7 +43,7 @@ public class ControllerStart {
     private TreeTableColumn<Human, String> columnName;
 
     @FXML
-    private TreeTableColumn<Human, Integer> columnAge;
+    private TreeTableColumn<Human, String> columnAge;
 
     @FXML
     private TreeTableColumn<Human, Date> columnBirthday;
@@ -70,9 +67,14 @@ public class ControllerStart {
 
     @FXML
     void initialize() {
-    	
+    	LOG.debug("Запущен метод - initialize(); (), в классе -  ControllerStart");
     	view = Main.getView();
-    	//Вот тут возник вопрос , как передать humansList( - это ObservableList) tableView ????
-    	tableView.setRoot(value);
+    	initTreeTableColumns();
+    	
     }
+    
+    private void initTreeTableColumns() {
+    	
+	}
+    
 }

@@ -7,7 +7,7 @@ import javafx.scene.image.ImageView;
 
 public class Dialogs {
 	public static void showErrorDialog(String errorText, String ImagePath) {
-		System.out.println("method - showErrorDialog, class - Dialogs");
+		//System.out.println("method - showErrorDialog, class - Dialogs");
 
 		Alert alert = new Alert(AlertType.ERROR);
 		if (ImagePath != null) {
@@ -23,7 +23,7 @@ public class Dialogs {
 	}
 	
 	public static void showWarningDialog(String warningText, String ImagePath) {
-		System.out.println("method - showWarningDialog, class - Dialogs");
+		//System.out.println("method - showWarningDialog, class - Dialogs");
 
 		Alert alert = new Alert(AlertType.WARNING);
 		if (ImagePath != null) {
@@ -38,7 +38,7 @@ public class Dialogs {
 	}
 
 	public static void showInformationDialog(String infoText, String ImagePath) {
-		System.out.println("method - showInformationDialog, class - Dialogs");
+		//System.out.println("method - showInformationDialog, class - Dialogs");
 
 		Alert alert = new Alert(AlertType.INFORMATION);
 		if (ImagePath != null) {
