@@ -14,12 +14,12 @@ public class Human implements Serializable {
 
 	private String name;
 	private Integer age;
-	private DatePicker dirhtday;
+	private LocalDate birthday;
 
-	public Human(String name, Integer age, DatePicker dirhtday) {
-		setName(name);
-		setAge(age);
-		setDirhtday(dirhtday);
+	public Human(String name, Integer age, LocalDate birthday) {
+		this.name = name;
+		this.age = age;
+		this.birthday = birthday;
 	}
 
 	public String getName() {
@@ -38,12 +38,12 @@ public class Human implements Serializable {
 		this.age = age;
 	}
 
-	public DatePicker getDirhtday() {
-		return dirhtday;
+	public LocalDate getBirthday() {
+		return birthday;
 	}
 
-	public void setDirhtday(DatePicker dirhtday) {
-		this.dirhtday = dirhtday;
+	public void setBirthday(LocalDate birthday) {
+		this.birthday = birthday;
 	}
 
 	@Override
@@ -51,7 +51,7 @@ public class Human implements Serializable {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((age == null) ? 0 : age.hashCode());
-		result = prime * result + ((dirhtday == null) ? 0 : dirhtday.hashCode());
+		result = prime * result + ((birthday == null) ? 0 : birthday.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
 	}
@@ -70,10 +70,10 @@ public class Human implements Serializable {
 				return false;
 		} else if (!age.equals(other.age))
 			return false;
-		if (dirhtday == null) {
-			if (other.dirhtday != null)
+		if (birthday == null) {
+			if (other.birthday != null)
 				return false;
-		} else if (!dirhtday.equals(other.dirhtday))
+		} else if (!birthday.equals(other.birthday))
 			return false;
 		if (name == null) {
 			if (other.name != null)

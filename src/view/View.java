@@ -5,11 +5,15 @@ import java.io.IOException;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 public class View {
-
+	
+	Image image = new Image("/resources/icon.png");
+	
 	public void showWindowStart(Stage primaryStage) {
+		
 		FXMLLoader loader = new FXMLLoader();
 		loader.setLocation(getClass().getResource("/view/WindowStart.fxml"));
 		try {
@@ -21,6 +25,7 @@ public class View {
 		primaryStage.setScene(new Scene(root));
 		primaryStage.setResizable(false);
 		primaryStage.setTitle("AppForSS - Main");
+		primaryStage.getIcons().add(image);
 		primaryStage.show();
 	}
 	
@@ -36,6 +41,23 @@ public class View {
 		primaryStage.setScene(new Scene(root));
 		primaryStage.setResizable(false);
 		primaryStage.setTitle("AppForSS - Add");
+		primaryStage.getIcons().add(image);
+		primaryStage.show();
+	}
+	
+	public void showWindowEdit(Stage primaryStage) {
+		FXMLLoader loader = new FXMLLoader();
+		loader.setLocation(getClass().getResource("/view/WindowEdit.fxml"));
+		try {
+			loader.load();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		Parent root = loader.getRoot();
+		primaryStage.setScene(new Scene(root));
+		primaryStage.setResizable(false);
+		primaryStage.setTitle("AppForSS - Edit");
+		primaryStage.getIcons().add(image);
 		primaryStage.show();
 	}
 

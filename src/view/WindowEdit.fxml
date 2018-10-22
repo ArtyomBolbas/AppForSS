@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #D2B48C;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerEdit">
+   <children>
+      <AnchorPane layoutY="14.0" prefHeight="340.0" prefWidth="600.0" style="-fx-background-color: #FFFFE0;">
+         <children>
+            <Label layoutX="75.0" layoutY="70.0" text="Name" textFill="#ba8f8f">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="75.0" layoutY="140.0" text="Age" textFill="#ba8f8f">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="75.0" layoutY="210.0" text="Birthday" textFill="#ba8f8f">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="textFieldNameId" layoutX="230.0" layoutY="75.0" prefHeight="25.0" prefWidth="250.0" promptText="Enter human name " style="-fx-background-color: #FFFFE0; -fx-border-color: #FFDAB9; -fx-border-radius: 5;" />
+            <TextField fx:id="textFieldAgeID" layoutX="230.0" layoutY="145.0" prefHeight="25.0" prefWidth="250.0" promptText="Enter human age" style="-fx-background-color: #FFFFE0; -fx-border-color: #FFDAB9; -fx-border-radius: 5;" />
+            <DatePicker fx:id="datePickerID" layoutX="230.0" layoutY="215.0" prefHeight="25.0" prefWidth="250.0" style="-fx-background-color: #FFFFE0; -fx-border-color: #FFDAB9; -fx-border-radius: 5;" />
+            <Label layoutX="20.0" layoutY="20.0" text="Edit:" textFill="#ba8f8f" underline="true">
+               <font>
+                  <Font name="System Bold Italic" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <Button fx:id="buttonSaveID" layoutX="100.0" layoutY="360.0" mnemonicParsing="false" onAction="#buttonSave" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #D2B48C; -fx-border-color: #ba8f8f; -fx-border-radius: 5;" text="Save" textFill="#ba8f8f">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonCancelID" cancelButton="true" layoutX="350.0" layoutY="360.0" mnemonicParsing="false" onAction="#buttonCancel" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: #D2B48C; -fx-border-color: #ba8f8f; -fx-border-radius: 5;" text="Cancel" textFill="#ba8f8f">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
