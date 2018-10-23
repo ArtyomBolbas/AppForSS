@@ -2,11 +2,13 @@ package view;
 
 import java.io.IOException;
 
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 
 public class View {
 	
@@ -25,6 +27,13 @@ public class View {
 		primaryStage.setScene(new Scene(root));
 		primaryStage.setResizable(false);
 		primaryStage.setTitle("AppForSS - Main");
+		
+		primaryStage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+	        public void handle(WindowEvent we) {
+	         System.out.println("Stage is closing");
+	         }
+	        });
+		
 		primaryStage.getIcons().add(image);
 		primaryStage.show();
 	}

@@ -59,20 +59,25 @@ public class ControllerEdit {
     }
 
     private void editHuman() {
+		LOG.debug("Запущен метод - editHuman(); (Метод редактирует данные выбранного Human), в классе -  ControllerEdit");
+    	try {
     	Human human = Transmitter.getTable().getSelectionModel().getSelectedItem().getValue();
 		human.setName(textFieldNameId.getText());
 		human.setAge(Integer.parseInt(textFieldAgeID.getText()));
-		//!!!!!!!!!!!!!!!!!!!!! Error
 		human.setBirthday(datePickerID.getValue());
 		Dialogs.showInformationDialog(INFORMATION_EDIT_HUMAN, null);
 		Transmitter.getTable().refresh();
 		close();
+    	} catch(NumberFormatException e) {
+			LOG.error("Ошибка - NumberFormatException; Methos - addHuman(); Class - ControllerAdd");
+			textFieldAgeID.clear();
+			Dialogs.showInformationDialog(INFORMATION_FAIL, null);
+    	}
 	}
 
 	@FXML
     void initialize() {
 		LOG.debug("Запущен метод - initialize(); (Метод инициализирует ком-ты, при запуске окна), в классе -  ControllerEdit");
-
     	Human human = Transmitter.getTable().getSelectionModel().getSelectedItem().getValue();
 		textFieldNameId.setText(human.getName());
 		textFieldAgeID.setText(String.valueOf(human.getAge()));

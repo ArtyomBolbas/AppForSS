@@ -1,14 +1,18 @@
 package controller;
 
+import org.apache.log4j.Logger;
+
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 public class Dialogs {
-	public static void showErrorDialog(String errorText, String ImagePath) {
-		//System.out.println("method - showErrorDialog, class - Dialogs");
+	
+	private static final Logger LOG = Logger.getLogger(Dialogs.class);
 
+	public static void showErrorDialog(String errorText, String ImagePath) {
+		LOG.debug("Запущен метод - showErrorDialog(); (), в классе -  Dialogs");
 		Alert alert = new Alert(AlertType.ERROR);
 		if (ImagePath != null) {
 			Image imageError = new Image(ImagePath);
@@ -21,10 +25,9 @@ public class Dialogs {
 		alert.showAndWait();
 
 	}
-	
-	public static void showWarningDialog(String warningText, String ImagePath) {
-		//System.out.println("method - showWarningDialog, class - Dialogs");
 
+	public static void showWarningDialog(String warningText, String ImagePath) {
+		LOG.debug("Запущен метод - showWarningDialog(); (), в классе -  Dialogs");
 		Alert alert = new Alert(AlertType.WARNING);
 		if (ImagePath != null) {
 			Image imageWorning = new Image(ImagePath);
@@ -38,8 +41,7 @@ public class Dialogs {
 	}
 
 	public static void showInformationDialog(String infoText, String ImagePath) {
-		//System.out.println("method - showInformationDialog, class - Dialogs");
-
+		LOG.debug("Запущен метод - showInformationDialog(); (), в классе -  Dialogs");
 		Alert alert = new Alert(AlertType.INFORMATION);
 		if (ImagePath != null) {
 			Image imageInfo = new Image(ImagePath);
@@ -51,6 +53,5 @@ public class Dialogs {
 		alert.setContentText(infoText);
 		alert.showAndWait();
 	}
-	
-	
+
 }

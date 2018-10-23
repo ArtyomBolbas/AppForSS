@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #D2B48C;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerAdd">
    <children>
       <AnchorPane layoutY="14.0" prefHeight="340.0" prefWidth="600.0" style="-fx-background-color: #FFFFE0;">
@@ -27,9 +26,9 @@
                   <Font name="System Bold Italic" size="24.0" />
                </font>
             </Label>
-            <TextField fx:id="textFieldNameId" layoutX="230.0" layoutY="75.0" onAction="#textFieldName" prefHeight="25.0" prefWidth="250.0" promptText="Enter human name " style="-fx-background-color: #FFFFE0; -fx-border-color: #FFDAB9; -fx-border-radius: 5;" />
-            <TextField fx:id="textFieldAgeID" layoutX="230.0" layoutY="145.0" onAction="#textFieldAge" prefHeight="25.0" prefWidth="250.0" promptText="Enter human age" style="-fx-background-color: #FFFFE0; -fx-border-color: #FFDAB9; -fx-border-radius: 5;" />
-            <DatePicker fx:id="datePickerID" layoutX="230.0" layoutY="215.0" onAction="#datePicker" prefHeight="25.0" prefWidth="250.0" style="-fx-background-color: #FFFFE0; -fx-border-color: #FFDAB9; -fx-border-radius: 5;" />
+            <TextField fx:id="textFieldNameId" layoutX="230.0" layoutY="75.0" prefHeight="25.0" prefWidth="250.0" promptText="Enter human name " style="-fx-background-color: #FFFFE0; -fx-border-color: #FFDAB9; -fx-border-radius: 5; -fx-text-fill: #8B4513;" />
+            <TextField fx:id="textFieldAgeID" layoutX="230.0" layoutY="145.0" prefHeight="25.0" prefWidth="250.0" promptText="Enter human age" style="-fx-background-color: #FFFFE0; -fx-border-color: #FFDAB9; -fx-border-radius: 5; -fx-text-fill: #8B4513;" />
+            <DatePicker fx:id="datePickerID" layoutX="230.0" layoutY="215.0" prefHeight="25.0" prefWidth="250.0" style="-fx-background-color: #FFFFE0; -fx-border-color: #FFDAB9; -fx-border-radius: 5; -fx-text-fill: #8B4513;" />
             <Label layoutX="20.0" layoutY="20.0" text="Add:" textFill="#ba8f8f" underline="true">
                <font>
                   <Font name="System Bold Italic" size="24.0" />

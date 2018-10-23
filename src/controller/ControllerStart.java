@@ -1,6 +1,7 @@
 package controller;
 
 import java.net.URL;
+
 import java.time.LocalDate;
 import java.util.ResourceBundle;
 
@@ -22,8 +23,7 @@ import view.View;
 
 public class ControllerStart {
 
-	private static final Logger LOG = Logger.getLogger(ControllerStart.class);
-
+	private static final Logger LOG = Logger.getLogger(ControllerStart.class);	
 	private Stage primaryStage = new Stage();
 	private static View view;
 
@@ -59,6 +59,7 @@ public class ControllerStart {
 
 	@FXML
 	void buttonAdd(ActionEvent event) {
+		LOG.debug("Запущен метод - buttonAdd(); (), в классе -  ControllerStart");
 		if (!primaryStage.isShowing()) {
 			view.showWindowAdd(primaryStage);
 		}
@@ -66,6 +67,7 @@ public class ControllerStart {
 
 	@FXML
 	void buttonDelete(ActionEvent event) {
+		LOG.debug("Запущен метод - buttonDelete(); (Удаляет из treeTableView выбранную сущность Human), в классе -  ControllerStart");
 		TreeItem<Human> human = tableView.getSelectionModel().getSelectedItem();
 		if (human == null) {
 			Dialogs.showInformationDialog(INFORMATION_NOT_SELECTED, null);
@@ -76,6 +78,7 @@ public class ControllerStart {
 
 	@FXML
 	void buttonEdit(ActionEvent event) {
+		LOG.debug("Запущен метод - buttonEdit(); (), в классе -  ControllerStart");
 		TreeItem<Human> human = tableView.getSelectionModel().getSelectedItem();
 		if (human == null) {
 			Dialogs.showInformationDialog(INFORMATION_NOT_SELECTED, null);
@@ -86,17 +89,11 @@ public class ControllerStart {
 		}
 	}
 
-	/*
-	 * @FXML void treeTableViewMouseClicked(MouseEvent event) {
-	 * if(event.getClickCount() == 2) { birthday(); } }
-	 */
-
 	@FXML
 	void initialize() {
 		LOG.debug("Запущен метод - initialize(); (), в классе -  ControllerStart");
 		view = Main.getView();
 		initTreeTableColumns();
-
 		tableView.setOnMouseClicked(event -> {
 			if (event.getButton().equals(MouseButton.PRIMARY) && event.getClickCount() == 2) {
 				birthday();
@@ -105,10 +102,9 @@ public class ControllerStart {
 	}
 
 	private void birthday() {
+		try {
 		Human human = Transmitter.getTable().getSelectionModel().getSelectedItem().getValue();
 		LocalDate now = LocalDate.now();
-
-		try {
 			if (now.getMonthValue() == human.getBirthday().getMonthValue()
 					&& now.getDayOfMonth() == human.getBirthday().getDayOfMonth()) {
 				Dialogs.showInformationDialog(INFORMATION_BRITHDAY, null);
@@ -133,10 +129,15 @@ public class ControllerStart {
 		Transmitter.setTable(tableView);
 		Transmitter.getTable();
 		tableView.setRoot(root);
+		
 	}
+	
+
 
 }
 
+/////////////////NEW CLASS///////////////////////////NEW CLASS////////////////////////NEW CLASS//////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////
 class Transmitter {
 	private static TreeTableView<Human> table;
 	private static Logger LOG = Logger.getLogger(Transmitter.class);
